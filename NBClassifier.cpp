@@ -148,7 +148,7 @@ void findProbabiltyGiven(vector<vector<float>>& probability, char h, vector<Inst
 		{
 			for (int j = 0; j < 60; j++)
 			{
-				probability[i][j] = (count_hash_given[i][j] / n);
+				probability[i][j] = ((count_hash_given[i][j] + 0.5) / (n + 1.0));		//prior probability is 0.5 and pseudocount is 1
 			}
 		}
 	}
@@ -158,7 +158,7 @@ void findProbabiltyGiven(vector<vector<float>>& probability, char h, vector<Inst
 		{
 			for (int j = 0; j < 60; j++)
 			{
-				probability[i][j] = (count_blank_given[i][j] / n);
+				probability[i][j] = ((count_blank_given[i][j] + 0.5) / (n + 1));		//prior probability is 0.5 and pseudocount is 1
 			}
 		}
 	}
