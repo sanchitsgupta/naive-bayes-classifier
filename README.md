@@ -1,22 +1,39 @@
-## Implementing the Naive-Bayes-Classifier algorithm in C++
+# Naive-Bayes Classifier in C++
 
-This is an implementation of the [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) algorithm in C++.  
+![C++](https://img.shields.io/badge/C%2B%2B-v14-blue.svg?style=flat&logo=c%2B%2B)
+![Linux](https://svgshare.com/i/Zhy.svg)
+![PyPI license](https://img.shields.io/github/license/sanchitsgupta/naive-bayes-classifier)
 
-Running
-------
-To test the algorithm, **compile and run NBClassifier.cpp**
+This is an implementation of the [Naive-Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) in C++.
 
-Dataset Information
-------
+## Running
 
+Compile and run the [classifier.cpp](./classifier.cpp) file.
+```shell
+$ g++ -o classifier classifier.cpp
+$ ./classifier
+```
 
-The code was written specifically for this dataset and will require significant changes before running on some other dataset. 
+## Dataset Info
 
-Built With
-------
-* [Visual Studio 2015](https://www.visualstudio.com/)
+I used a custom dataset that has faces represented in txt files. Check out [facedatatrain.txt](./datatrain/facedatatrain.txt) file to understand the data.
 
-Additional Notes
-------
-This project was made only for understanding purpose, as a part of my course assignment, 
-so no performance or memory improvements were made whatsoever.  
+[datatrain](./datatrain/) directory contains the training files and [dataset](./datatest/) contains the testing ones.
+
+> NOTE: Code was written specifically for this dataset and will require significant changes before running on some other dataset.
+
+## Results
+
+Accuracy: 89.3333%
+
+Confusion Matrix
+|                     | Predicted Face | Predicted Non-Face |
+| ------------------- |:--------------:|:------------------:|
+| **Actual Face**     | 68             | 5                  |
+| **Actual Non-Face** | 11             | 66                 |
+
+Precision: 86.076%
+
+Recall: 93.1507%
+
+F-measure: 89.4737%
